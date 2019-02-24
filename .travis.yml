@@ -32,7 +32,8 @@ script:
   - ./mvnw -f docker/h2/pom.xml -P up
   - bash ./apps/h2-eventstore/target/*.jar &
   - wait_for 8080
-  - http :8080/auto | jq '.'
+  - http :8080/ | jq '.'
+  - http :8080/test message=ololo-trololo | jq '.'
   - stop_any 8080
   - sleep 1s
 cache:
