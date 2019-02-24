@@ -3,6 +3,8 @@ Yeah... One more event sourcing and CQRS... Don't ask. It's, as usual, kind of i
 
 Travis CI build status: [![Build Status](https://travis-ci.org/daggerok/eventstore-project.svg?branch=master)](https://travis-ci.org/daggerok/eventstore-project/)
 
+GitHub [daggerok/eventstore-project](https://github.com/daggerok/eventstore-project/) repository
+
 Read docs on [GitHub Pages](https://daggerok.github.io/eventstore-project/)
 
 ## run database
