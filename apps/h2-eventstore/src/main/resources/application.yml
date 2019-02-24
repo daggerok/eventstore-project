@@ -1,0 +1,28 @@
+spring:
+  application.name: h2-eventstore
+  output.ansi.enabled: always
+  datasource:
+    url: jdbc:h2:tcp://127.0.0.1/./target/h2-eventstore
+    name: h2-eventstore
+    username: h2-eventstore
+    password: h2-eventstore
+    hikari:
+      connection-test-query: 'SELECT 1'
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create-drop
+#      ddl-auto: update
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+#        #https://my-blog.now.sh/posts/2019/02/23/Method-PgConnection-createClob-is-not-yet-implemented.html
+#        temp:
+#          use_jdbc_metadata_defaults: false
+  main:
+    allow-bean-definition-overriding: true
+logging:
+  level:
+    com.github.daggerok: DEBUG
