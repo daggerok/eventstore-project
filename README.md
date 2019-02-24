@@ -10,22 +10,20 @@ Read docs on [GitHub Pages](https://daggerok.github.io/eventstore-project/)
 ## run database
 
 ```bash
-./mvnw -f docker/h2/pom.xml -P copy ; ./mvnw -f docker/all/pom.xml -P up
+./mvnw -f docker/h2/pom.xml -P up
 ```
 
 ## run eventstore
 
 ```bash
-bash ./apps/h2-eventstore-app/target/*.jar
-bash ./apps/h2-eventstore-app/target/*.jar
-bash ./apps/h2-eventstore-app/target/*.jar
+bash ./apps/h2-eventstore/target/*.jar
 ```
 
 ## cleanup
 
 ```bash
 killall -9 java
-./mvnw -f docker/all/pom.xml -P down
+./mvnw -f docker/h2/pom.xml -P down
 ```
 
 ## build VuePress documentation
