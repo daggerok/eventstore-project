@@ -11,7 +11,6 @@ import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -46,12 +45,13 @@ public class Event implements Serializable {
   @CreatedDate
   @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS Z")
 //@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS Z", timezone = "UTC")
-  @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+//@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
   @JsonDeserialize(using = OffsetTimeDeserializer.class)
   @JsonSerialize(using = ZonedDateTimeSerializer.class)
   ZonedDateTime createdAt;
 
   @LastModifiedDate
+//@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
   @JsonDeserialize(using = OffsetTimeDeserializer.class)
   @JsonSerialize(using = OffsetDateTimeSerializer.class)
   ZonedDateTime lastModifiedAt;
